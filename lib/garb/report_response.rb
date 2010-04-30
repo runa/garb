@@ -10,6 +10,10 @@ module Garb
       @results ||= parse
     end
 
+    def total_results
+      @total_entries ||= parse_xml['feed']['openSearch:totalResults']
+    end
+
     private
     def parse
       entries.map do |entry|
@@ -22,8 +26,12 @@ module Garb
     end
 
     def entries
-      entry_hash = Crack::XML.parse(@xml)
+      entry_hash = parse_xml 
       entry_hash ? [entry_hash['feed']['entry']].flatten : []
+    end
+	
+    def parse_xml
+      @parsed ||= Crack::XML.parse(@xml)
     end
 
     def values_for(entry)

@@ -8,6 +8,7 @@ module Garb
         response = ReportResponse.new(File.read(filename))
         
         assert_equal ['33', '2', '1'], response.results.map(&:pageviews)
+        assert_equal '2', response.total_results
       end
     end
   end

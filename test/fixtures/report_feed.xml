@@ -12,6 +12,7 @@
     <author>
       <name>Google Analytics</name>
     </author>    
+  <openSearch:totalResults>2</openSearch:totalResults>
   <openSearch:startIndex>3</openSearch:startIndex>
   <openSearch:itemsPerPage>4</openSearch:itemsPerPage>
   <ga:webPropertyID>UA-983247-67</ga:webPropertyID>

@@ -19,7 +19,15 @@ module Garb
     end
 
     def results
-      ReportResponse.new(send_request_for_body).results
+      response.results
+    end
+
+    def total_results
+      response.total_results
+    end
+
+    def response
+      @response ||= ReportResponse.new(send_request_for_body)
     end
 
   end
