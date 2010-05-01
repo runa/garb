@@ -27,7 +27,7 @@ module Garb
     end
 
     def response
-      @response ||= ReportResponse.new(send_request_for_body)
+      ReportResponse.new(send_request_for_body)
     end
 
   end
